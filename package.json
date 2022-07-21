@@ -1,0 +1,25 @@
+{
+  "name": "10-team-dash-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codewizard-dt/team-dash-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codewizard-dt/team-dash-generator/issues"
+  },
+  "homepage": "https://github.com/codewizard-dt/team-dash-generator#readme",
+  "dependencies": {
+    "inquirer": "^9.0.2",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7"
+  }
+}
