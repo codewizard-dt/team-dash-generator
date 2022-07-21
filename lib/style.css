@@ -2,11 +2,11 @@
   --headerColor: #8F5515;
   --headerTextColor: white;
   --engineerColor: #36D1DB;
-  --engineerTextColor: rgb(0, 0, 0);
+  --engineerTextColor: black;
   --managerColor: #DB6E42;
-  --managerTextColor: rgb(0, 0, 0);
+  --managerTextColor: black;
   --internColor: #D99243;
-  --internTextColor: rgb(0, 0, 0);
+  --internTextColor: black;
 }
 
 header {
