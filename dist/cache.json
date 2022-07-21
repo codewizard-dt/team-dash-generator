@@ -1,0 +1,25 @@
+{
+  "employees": [
+    {
+      "name": "David",
+      "id": "1",
+      "email": "david@gmail.com",
+      "github": "codewizard-dt",
+      "role": "Engineer"
+    },
+    {
+      "name": "Sally",
+      "id": "2",
+      "email": "sally@gmail.com",
+      "school": "UT Austin",
+      "role": "Intern"
+    },
+    {
+      "name": "The Dude",
+      "id": "3",
+      "email": "dude@gmail.com",
+      "officeNumber": "1",
+      "role": "Manager"
+    }
+  ]
+}
