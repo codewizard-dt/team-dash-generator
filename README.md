@@ -24,9 +24,21 @@ Add employees or customize theme colors via the command line
 
 # Usage
 
+[Walkthrough Video](https://drive.google.com/file/d/1KIdfNCp1l66WatObcvk10h9CovQNAzz9/view?usp=sharing)
+
 - run `node index.js` to begin prompts
 - add new employees, or select from previously entered employees
 - when finished, html and css are stored in `/dist/*`
+
+## Customizing Colors
+
+You can change the basic colors and a new `/dist/style.css` will be generated
+
+- _IF_ you already have a stylesheet in `/dist` you can customize colors
+- run `node index.js` to begin
+- choose `Customize colors` and select the colors you want to change
+- enter any valid css color (ie: `white`, `#fff`, `rgb(250,250,250)`)
+- choose `Reset colors` if you would like the original stylesheet back
 
 # License
 

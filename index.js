@@ -15,9 +15,9 @@ const employees = []
 
 function newEmployee() {
   const choices = [
+    { value: 'Manager', name: 'New Manager' },
     { value: 'Engineer', name: 'New Engineer' },
     { value: 'Intern', name: 'New Intern' },
-    { value: 'Manager', name: 'New Manager' },
   ]
   if (cache.getCollection('employees').length > 0) choices.push('---', 'Choose from cache')
   if (employees.length > 0) choices.push('---', `Finish and Generate Dashboard`)
