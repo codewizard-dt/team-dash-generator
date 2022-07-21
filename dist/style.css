@@ -1,18 +1,18 @@
 :root{
-  --headerColor: black;
+  --headerBgColor: #8E4300;
   --headerTextColor: white;
-  --engineerColor: #36D1DB;
+  --engineerBgColor: #36D1DB;
   --engineerTextColor: black;
-  --managerColor: #DB6E42;
+  --managerBgColor: #DB6E42;
   --managerTextColor: black;
-  --internColor: #D99243;
+  --internBgColor: #D99243;
   --internTextColor: black;
 }
 
 header {
   text-align: center;
   padding: 1em;
-  background-color: var(--headerColor);
+  background-color: var(--headerBgColor);
   color: var(--headerTextColor)
 }
 
@@ -24,31 +24,47 @@ main.ui.container {
   justify-content: center;
 }
 
+#dashboard .ui.card {
+  transition: 400ms;
+}
+.ui.card:hover{
+  transform: translateY(-3px);
+}
+
 .ui.card .header {
   background-color: rgb(180,180,180);
   padding: 1em;
 }
 
+.ui.card.engineer:hover {
+  box-shadow: 0 0 5px 0px var(--engineerBgColor);
+}
 .ui.card.engineer .header {
-  background-color: var(--engineerColor);
+  background-color: var(--engineerBgColor);
   color: var(--engineerTextColor);
 }
 .ui.card.engineer i.icon {
-  color: var(--engineerColor);
+  color: var(--engineerBgColor);
 }
 
+.ui.card.manager:hover {
+  box-shadow: 0 0 5px 0px var(--managerBgColor);
+}
 .ui.card.manager .header {
-  background-color: var(--managerColor);
+  background-color: var(--managerBgColor);
   color: var(--managerTextColor);
 }
 .ui.card.manager i.icon {
-  color: var(--managerColor);
+  color: var(--managerBgColor);
 }
 
+.ui.card.intern:hover {
+  box-shadow: 0 0 5px 0px var(--internBgColor);
+}
 .ui.card.intern .header {
-  background-color: var(--internColor);
+  background-color: var(--internBgColor);
   color: var(--internTextColor);
 }
 .ui.card.intern i.icon {
-  color: var(--internColor);
+  color: var(--internBgColor);
 }

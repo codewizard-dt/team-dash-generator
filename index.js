@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require('path')
 
 const JsonCache = require('./lib/JsonCache.js')
+const colors = require('./colors.js')
 
 const Intern = require('./lib/Intern.js')
 const Engineer = require('./lib/Engineer.js');
@@ -13,13 +14,17 @@ const cache = new JsonCache('cache.json')
 const employees = []
 
 function newEmployee() {
-  const choices = ['Engineer', 'Intern', 'Manager']
+  const choices = [
+    { value: 'Engineer', name: 'New Engineer' },
+    { value: 'Intern', name: 'New Intern' },
+    { value: 'Manager', name: 'New Manager' },
+  ]
   if (cache.getCollection('employees').length > 0) choices.push('---', 'Choose from cache')
   if (employees.length > 0) choices.push('---', `Finish and Generate Dashboard`)
   inquirer.prompt([
     {
       name: 'employeeType',
-      message: 'Which type of employee would you like to add?',
+      message: 'Select an employee:',
       type: 'list',
       choices
     }
@@ -143,9 +148,9 @@ function mapRole(role) {
   switch (role) {
     case ('Intern'):
       return 0
-    case ('Manager'):
-      return 1
     case ('Engineer'):
+      return 1
+    case ('Manager'):
       return 2
     default:
       return -1
@@ -191,66 +196,17 @@ function writeFile(filename) {
   fs.writeFile(path.resolve(__dirname, 'dist', filename), boilerplate, () => {
     console.log(`File saved at './dist/${filename}'`)
   })
-  copyStylesheet()
-}
-
-function copyStylesheet() {
-  fs.copyFile(path.resolve(__dirname, 'lib/style.css'), path.resolve(__dirname, 'dist', 'style.css'), () => {
-    console.log(`Stylesheet save at './dist/style.css'`)
-  })
-}
-
-const getPathToStylesheet = () => path.resolve(__dirname, 'dist', 'style.css')
-const getCssVarRegex = varName => new RegExp(`(--${varName}: )(.*);`)
-
-function getCssVar(cssVarName) {
-  const currentCss = fs.readFileSync(getPathToStylesheet(), 'utf8')
-  const match = currentCss.match(getCssVarRegex(cssVarName))
-  // console.log(match[2])
-  return match[2]
-}
-function updateCssVar(cssVarName, value) {
-  const filepath = getPathToStylesheet()
-  const currentCss = fs.readFileSync(filepath, 'utf8')
-  const regex = getCssVarRegex(cssVarName)
-  const newCss = currentCss.replace(regex, `$1${value};`)
-  fs.writeFileSync(filepath, newCss)
-}
-
-const colors = {
-  headerColor: '#8F5515',
-  headerTextColor: 'white',
-  engineerColor: '#36D1DB',
-  engineerTextColor: 'black',
-  managerColor: '#DB6E42',
-  managerTextColor: 'black',
-  internColor: '#D99243',
-  internTextColor: 'black',
-}
-function customizeColors() {
-  inquirer.prompt([
-    { name: 'varNames', type: 'checkbox', message: 'Select colors to change:', choices: Object.keys(colors) }
-  ]).then(({ varNames }) => {
-    inquirer.prompt(varNames.map(varName => {
-      const current = getCssVar(varName)
-      return ({
-        name: varName, type: 'input', default: current, message: `${varName} color:`
-      })
-    })).then(answers => {
-      for (let [varName, color] of Object.entries(answers)) {
-        updateCssVar(varName, color)
-      }
-    })
-  })
+  if (!colors.stylesheetExists()) colors.copyStylesheet()
 }
 
 (function () {
-  if (fs.existsSync(getPathToStylesheet())) {
+  if (colors.stylesheetExists()) {
     inquirer.prompt([
-      { name: 'mode', type: 'list', message: 'What would you like to do?', choices: ['Add employees', 'Customize colors'] }
+      { name: 'mode', type: 'list', message: 'What would you like to do?', choices: ['Generate new HTML', 'Customize colors', 'Reset colors'] }
     ]).then(({ mode }) => {
-      if (mode === 'Add employees') newEmployee()
-      else if (mode === 'Customize colors') customizeColors()
+      if (mode === 'Generate new HTML') newEmployee()
+      else if (mode === 'Customize colors') colors.customize()
+      else if (mode === 'Reset colors') colors.reset()
     })
   } else {
     newEmployee()

@@ -20,6 +20,34 @@
       "email": "ben@gmail.com",
       "officeNumber": "1",
       "role": "Manager"
+    },
+    {
+      "name": "Micah",
+      "id": "52",
+      "email": "micah@gmail.com",
+      "github": "mc-github",
+      "role": "Engineer"
+    },
+    {
+      "name": "Tom",
+      "id": "33",
+      "email": "tom@gmail.com",
+      "school": "A&M",
+      "role": "Intern"
+    },
+    {
+      "name": "Malik",
+      "id": "7",
+      "email": "malik@gmail.com",
+      "github": "malik-gh",
+      "role": "Engineer"
+    },
+    {
+      "name": "Sayid",
+      "id": "22",
+      "email": "sayid@gmail.com",
+      "school": "UT Austin",
+      "role": "Intern"
     }
   ]
 }
