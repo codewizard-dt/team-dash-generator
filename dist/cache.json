@@ -20,6 +20,27 @@
       "email": "dude@gmail.com",
       "officeNumber": "1",
       "role": "Manager"
+    },
+    {
+      "name": "Matt",
+      "id": "4",
+      "email": "matt@gmail.com",
+      "github": "matt-gh",
+      "role": "Engineer"
+    },
+    {
+      "name": "Cecilia",
+      "id": "5",
+      "email": "ceci@gmail.com",
+      "school": "A&M",
+      "role": "Intern"
+    },
+    {
+      "name": "Sayid",
+      "id": "6",
+      "email": "sayid@gmail.com",
+      "officeNumber": "2",
+      "role": "Manager"
     }
   ]
 }

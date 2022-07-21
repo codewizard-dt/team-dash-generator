@@ -136,6 +136,27 @@ function newManager(employee) {
   }
 }
 
+function mapRole(role) {
+  switch (role) {
+    case ('Intern'):
+      return 0
+    case ('Manager'):
+      return 1
+    case ('Engineer'):
+      return 2
+    default:
+      return -1
+  }
+}
+function sortRoles({ role: roleA }, { role: roleB }) {
+  roleA = mapRole(roleA)
+  roleB = mapRole(roleB)
+  return roleB - roleA
+}
+function sortIds({ id: idA }, { id: idB }) {
+  return idA - idB
+}
+
 function generateDashboard() {
   inquirer.prompt([
     { name: 'proceed', type: 'confirm', message: `Continue with ${employees.length} employees?` }
@@ -161,11 +182,17 @@ function generateDashboard() {
 }
 
 function writeFile(filename) {
-  const html = employees.map(employee => employee.renderHtml()).join()
+  const html = employees.sort(sortIds).sort(sortRoles).map(employee => employee.renderHtml()).join('')
   let boilerplate = fs.readFileSync(path.resolve(__dirname, 'lib/boilerplate.html'), 'utf8')
   boilerplate = boilerplate.replace('%%%_CARDS_%%%', html)
   fs.writeFile(path.resolve(__dirname, 'dist', filename), boilerplate, () => {
     console.log(`File saved at './dist/${filename}'`)
+  })
+  writeStylesheet()
+}
+function writeStylesheet() {
+  fs.copyFile(path.resolve(__dirname, 'lib/style.css'), path.resolve(__dirname, 'dist', 'style.css'), () => {
+    console.log(`Stylesheet save at './dist/style.css'`)
   })
 }
 

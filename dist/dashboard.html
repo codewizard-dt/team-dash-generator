@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
     />
+    <link rel="stylesheet" href="./style.css" />
     <title>Employee Roster</title>
   </head>
   <body>
@@ -17,35 +18,51 @@
       <h1>Employees</h1>
     </header>
     <main class="ui container">
-      <div class="ui cards">
-    <div class='ui card'>
+      <div class="ui section basic">
+        <div class="ui cards three">
+    <div class='ui card engineer'>
+      <div class='header'><h2>David</h2></div>
       <div class='content'>
-        <div class='header'>David</div>
         <div class='meta'><i class='terminal icon'></i><span>Engineer</span></div>
         <div class='description'>
           <div class='ui list'>
             <div class='item'>ID: 1</div>
-            <div class='item'>Email: david@gmail.com</div>
-            <div class='item'>GitHub: codewizard-dt</div>
+            <div class='item'>Email: <a target="_blank" href="mailto:david@gmail.com">david@gmail.com</a></div>
+            <div class='item'>GitHub: <a target="_blank" href="https://github.com/codewizard-dt">codewizard-dt</a></div>
           </div>
         </div>
       </div>
     </div>
-  ,
-    <div class='ui card'>
+  
+    <div class='ui card manager'>
+      <div class='header'><h2>The Dude</h2></div>
       <div class='content'>
-        <div class='header'>Sally</div>
+        <div class='meta'><i class='key icon'></i><span>Manager</span></div>
+        <div class='description'>
+          <div class='ui list'>
+            <div class='item'>ID: 3</div>
+            <div class='item'>Email: <a target="_blank" href="mailto:dude@gmail.com">dude@gmail.com</a></div>
+            <div class='item'>Office: 1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class='ui card intern'>
+      <div class='header'><h2>Sally</h2></div>
+      <div class='content'>
         <div class='meta'><i class='headphones icon'></i><span>Intern</span></div>
         <div class='description'>
           <div class='ui list'>
             <div class='item'>ID: 2</div>
-            <div class='item'>Email: sally@gmail.com</div>
+            <div class='item'>Email: <a target="_blank" href="mailto:sally@gmail.com">sally@gmail.com</a></div>
             <div class='item'>School: UT Austin</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+      </div>
     </main>
     <footer></footer>
     <scripts>

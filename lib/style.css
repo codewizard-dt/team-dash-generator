@@ -1,0 +1,54 @@
+:root{
+  --headerColor: #8F5515;
+  --headerTextColor: white;
+  --engineerColor: #36D1DB;
+  --engineerTextColor: rgb(0, 0, 0);
+  --managerColor: #DB6E42;
+  --managerTextColor: rgb(0, 0, 0);
+  --internColor: #D99243;
+  --internTextColor: rgb(0, 0, 0);
+}
+
+header {
+  text-align: center;
+  padding: 1em;
+  background-color: var(--headerColor);
+  color: var(--headerTextColor)
+}
+
+main.ui.container {
+  padding-top: 1em;
+}
+
+.ui.cards {
+  justify-content: center;
+}
+
+.ui.card .header {
+  background-color: rgb(180,180,180);
+  padding: 1em;
+}
+
+.ui.card.engineer .header {
+  background-color: var(--engineerColor);
+  color: var(--engineerTextColor);
+}
+.ui.card.engineer i.icon {
+  color: var(--engineerColor);
+}
+
+.ui.card.manager .header {
+  background-color: var(--managerColor);
+  color: var(--managerTextColor);
+}
+.ui.card.manager i.icon {
+  color: var(--managerColor);
+}
+
+.ui.card.intern .header {
+  background-color: var(--internColor);
+  color: var(--internTextColor);
+}
+.ui.card.intern i.icon {
+  color: var(--internColor);
+}
