@@ -1,6 +1,6 @@
 :root{
-  --headerBgColor: black;
-  --headerTextColor: yellow;
+  --headerBgColor: #8E4300;
+  --headerTextColor: white;
   --engineerBgColor: #36D1DB;
   --engineerTextColor: black;
   --managerBgColor: #DB6E42;

@@ -32,15 +32,31 @@ Add employees or customize theme colors via the command line
 
 ## First Run
 
-![Clean start](./screenshots/1-clean-start.png)
+![Clean start](./screenshots/1-first-run.png)
 
 ## Has `dist/cache.json` But No HTML or CSS
 
-![Cache start](./screenshots/2-cache-start.png)
+![Cache start](./screenshots/2-with-cache-no-dist.png)
 
 ## Subsequent Runs
 
-![Clean start](./screenshots/3-second-run.png)
+![Second run](./screenshots/3-with-cache.png)
+
+## Cache Count
+
+![Cache update](./screenshots/4-cache-updates.png)
+
+## Finalize and Generate HTML
+
+![List Confirmation](./screenshots/5-confirm-list.png)
+
+## Select filename
+
+![Filename Confirmation](./screenshots/6-filename.png)
+
+## Confirm overwrite if applicable
+
+![Overwrite Confirmation](./screenshots/7-confirm-overwrite.png)
 
 ## Customizing Colors
 
@@ -54,11 +70,17 @@ You can change the basic colors and a new `/dist/style.css` will be generated
 
 ## Select which if any colors you want to change
 
-![Color Selector](./screenshots/4-color-selector.png)
+![Color Selector](./screenshots/8-select-colors.png)
 
 ## Set color using any valid CSS color (default for each color is the _current_ color)
 
-![Color Setter](./screenshots/5-color-setter.png)
+![Color Setter](./screenshots/9-assign-colors.png)
+![Custom colors](./screenshots/9a-custom-colors.png)
+
+## Reset colors
+
+![Reset](./screenshots/10-reset-colors.png)
+![Reset colors](./screenshots/10a-rest-colors.png)
 
 # License
 
