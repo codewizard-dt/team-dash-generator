@@ -1,4 +1,5 @@
 INSTRUCTIONS.*
+dist/cache.json
 # Logs
 logs
 *.log

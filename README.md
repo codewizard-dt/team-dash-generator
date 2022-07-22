@@ -26,7 +26,7 @@ Add employees or customize theme colors via the command line
 
 [Walkthrough Video](https://drive.google.com/file/d/1KIdfNCp1l66WatObcvk10h9CovQNAzz9/view?usp=sharing)
 
-- run `node index.js` to begin prompts
+- run `npm start` or `node index.js` to begin prompts
 - add new employees, or select from previously entered employees
 - when finished, html and css are stored in `/dist/*`
 
