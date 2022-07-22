@@ -40,18 +40,38 @@ function updateCssVar(cssVarName, value) {
 
 function reset() {
   copyStylesheet()
-  // for (let [varName, color] of Object.entries(colors)) {
-  //   updateCssVar(varName, color)
-  // }
+}
+function mapColorToChoices(varName) {
+  let choice = { value: varName }
+  switch (varName) {
+    case ('headerBgColor'):
+      return { name: 'Page Header bg color', ...choice }
+    case ('headerTextColor'):
+      return { name: 'Page Header text color', ...choice }
+    case ('engineerBgColor'):
+      return { name: 'Engineer Card color', ...choice }
+    case ('engineerTextColor'):
+      return { name: 'Engineer Card text color', ...choice }
+    case ('managerBgColor'):
+      return { name: 'Manager Card color', ...choice }
+    case ('managerTextColor'):
+      return { name: 'Manager Card text color', ...choice }
+    case ('internBgColor'):
+      return { name: 'Intern Card color', ...choice }
+    case ('internTextColor'):
+      return { name: 'Intern Card text color', ...choice }
+  }
 }
 function customize() {
+  let colorChoices = Object.keys(colors).map(mapColorToChoices)
   inquirer.prompt([
-    { name: 'varNames', type: 'checkbox', message: 'Select colors to change:', choices: Object.keys(colors) }
+    { name: 'varNames', type: 'checkbox', message: 'Select colors to change:', choices: colorChoices }
   ]).then(({ varNames }) => {
     inquirer.prompt(varNames.map(varName => {
       const current = getCssVar(varName)
+      const color = colorChoices.find(({ value }) => varName === value)
       return ({
-        name: varName, type: 'input', default: current, message: `New ${varName}:`
+        name: varName, type: 'input', default: current, message: `New ${color.name}:`
       })
     })).then(answers => {
       for (let [varName, color] of Object.entries(answers)) {

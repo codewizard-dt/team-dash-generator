@@ -19,7 +19,17 @@ function newEmployee() {
     { value: 'Engineer', name: 'New Engineer' },
     { value: 'Intern', name: 'New Intern' },
   ]
-  if (cache.getCollection('employees').length > 0) choices.push('---', 'Choose from cache')
+  const cachedChoices = cache.getCollection('employees')
+    .filter(({ id }) =>
+      employees.find(({ id: id2 }) => id2 === id) === undefined
+    ).map(employee => (
+      {
+        name: `${employee.name} - ${employee.role}`,
+        value: employee
+      }
+    ))
+
+  if (cachedChoices.length > 0) choices.push('---', `Choose from cache (${cachedChoices.length})`)
   if (employees.length > 0) choices.push('---', `Finish and Generate Dashboard`)
   inquirer.prompt([
     {
@@ -32,16 +42,14 @@ function newEmployee() {
     if (employeeType === 'Engineer') newEngineer()
     else if (employeeType === 'Intern') newIntern()
     else if (employeeType === 'Manager') newManager()
-    else if (employeeType === 'Choose from cache') {
+    else if (employeeType.includes('Choose from cache')) {
+
       inquirer.prompt([
         {
           name: 'employee',
           message: 'Select employee:',
           type: 'list',
-          choices: cache.getCollection('employees').map(employee => ({
-            name: `${employee.name} - ${employee.role}`,
-            value: employee
-          }))
+          choices: cachedChoices
         }
       ]).then(({ employee }) => {
         if (employee.role === 'Manager') newManager(employee)
@@ -166,6 +174,7 @@ function sortIds({ id: idA }, { id: idB }) {
 }
 
 function generateDashboard() {
+  console.log('\n')
   inquirer.prompt([
     { name: 'proceed', type: 'confirm', message: `Continue with ${employees.length} employees?` }
   ]).then(({ proceed }) => {

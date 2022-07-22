@@ -30,6 +30,18 @@ Add employees or customize theme colors via the command line
 - add new employees, or select from previously entered employees
 - when finished, html and css are stored in `/dist/*`
 
+## First Run
+
+![Clean start](./screenshots/1-clean-start.png)
+
+## Has `dist/cache.json` But No HTML or CSS
+
+![Cache start](./screenshots/2-cache-start.png)
+
+## Subsequent Runs
+
+![Clean start](./screenshots/3-second-run.png)
+
 ## Customizing Colors
 
 You can change the basic colors and a new `/dist/style.css` will be generated
@@ -39,6 +51,14 @@ You can change the basic colors and a new `/dist/style.css` will be generated
 - choose `Customize colors` and select the colors you want to change
 - enter any valid css color (ie: `white`, `#fff`, `rgb(250,250,250)`)
 - choose `Reset colors` if you would like the original stylesheet back
+
+## Select which if any colors you want to change
+
+![Color Selector](./screenshots/4-color-selector.png)
+
+## Set color using any valid CSS color (default for each color is the _current_ color)
+
+![Color Setter](./screenshots/5-color-setter.png)
 
 # License
 
