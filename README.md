@@ -34,15 +34,11 @@ Add employees or customize theme colors via the command line
 
 ![Clean start](./screenshots/1-first-run.png)
 
-## Has `dist/cache.json` But No HTML or CSS
-
-![Cache start](./screenshots/2-with-cache-no-dist.png)
-
-## Subsequent Runs
+## 'Choose from cache' option if available
 
 ![Second run](./screenshots/3-with-cache.png)
 
-## Cache Count
+## Shows count of available cached employees
 
 ![Cache update](./screenshots/4-cache-updates.png)
 
@@ -67,6 +63,8 @@ You can change the basic colors and a new `/dist/style.css` will be generated
 - choose `Customize colors` and select the colors you want to change
 - enter any valid css color (ie: `white`, `#fff`, `rgb(250,250,250)`)
 - choose `Reset colors` if you would like the original stylesheet back
+
+![Choose customize](./screenshots/11-choose-customize.png)
 
 ## Select which if any colors you want to change
 

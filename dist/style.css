@@ -1,11 +1,11 @@
 :root{
-  --headerBgColor: #8E4300;
+  --headerBgColor: #210124;
   --headerTextColor: white;
-  --engineerBgColor: #36D1DB;
+  --engineerBgColor: #B9F3E2;
   --engineerTextColor: black;
-  --managerBgColor: #DB6E42;
+  --managerBgColor: #B3DEC1;
   --managerTextColor: black;
-  --internBgColor: #D99243;
+  --internBgColor: #C5D3C5;
   --internTextColor: black;
 }
 
